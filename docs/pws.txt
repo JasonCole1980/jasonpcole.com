@@ -1,0 +1,11 @@
+IPage Admin
+UN: jasonpcole.com
+PW: d@RBY1983
+
+ftp://jasonpcole.com
+UN: jpccomAdmin
+PW: d@RBY1983
+
+GoDaddy FTP
+un: jcole1980
+pw: d@RBY1980
