@@ -9,4 +9,4 @@
 
 #### Projects that are currently being worked on/will be posted here
 > Facebook cover photo generator using images from your Flickr account
-> MusicStalker (top secret, will be the coolest music app conceivable.)
+> MusicStalker *top secret, will be the coolest music app conceivable.*
