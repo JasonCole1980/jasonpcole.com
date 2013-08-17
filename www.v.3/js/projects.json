@@ -1,0 +1,28 @@
+ {
+    "projects": {
+        "projectTitle": "Project 1",
+        "projectDescription": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+		"projectImages": {
+            "url-1": "img/projects/project-1/image-1.jpg",
+            "description-1": "image 1",
+            "url-2": "img/projects/project-1/image-2.jpg",
+            "description-2": "image-2",
+            "url-3": "img/projects/project-1/image-3.jpg",
+            "description-3": "image 3",
+            "url-4": "img/projects/project-1/image-4.jpg",
+            "description-4": "image 4"
+        }
+    },
+        "projectTitle": "Project 2",
+        "projectDescription": "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
+		"projectImages": {
+            "url-1": "img/projects/project-1/image-1.jpg",
+            "description-1": "image 1",
+            "url-2": "img/projects/project-1/image-2.jpg",
+            "description-2": "image-2",
+            "url-3": "img/projects/project-1/image-3.jpg",
+            "description-3": "image 3",
+            "url-4": "img/projects/project-1/image-4.jpg",
+            "description-4": "image 4"
+        }
+    }

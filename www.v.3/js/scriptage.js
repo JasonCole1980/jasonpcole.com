@@ -8,10 +8,15 @@ $(function () {
 		settings: {
 			/* "Cached" variables/information, 
 				frequently/widely used information for sub-functions */
-			headerText: "Jason Paul Cole",
 			logoButton: $('#logo'),
 			header: $('header'),
-			navigation: $('nav')
+			navigation: $('nav'),
+			about: $('#about'),
+			projectsTrigger: $('nav a[title="Projects"]'),
+			projects: $('#projects-outer-wrap'),
+			contactTrigger: $('nav a[title="Contact"]'),
+			close: $('a.close'),
+			toggleSideBar: $('a.toggleSideBar')
 		},
 		
 		init: function() {
@@ -28,39 +33,52 @@ $(function () {
 			/* Bind header element to 
 				mouseover/out to toggle
 				open area to display portfolio */
-			s.logoButton.on('mouseover', function(){
-		  		theSequence.togglePageItems('out');
-		    }).on('mouseout', function(){
-		      	theSequence.togglePageItems('in');
-		    });
+            s.projectsTrigger.on('click', function(){
+                theSequence.openProjects();
+                s.close.show();
+            });
+            s.close.on('click', function(){
+                theSequence.closeProjects();
+                s.close.hide();
+            });
 		},
 		
-		togglePageItems: function(state) {
+		openProjects: function() {
+            
+            theSequence.animateDOM(s.header, -50);
+            theSequence.animateDOM(s.navigation, -50);
+            theSequence.animateDOM(s.about, +200);
+            
+            $.getJSON('js/projects.json', function(data) {
+                var items = [];
+             
+                $.each(data, function(key, val) {
+                    items.push('<li id="' + key + '">' + val + '</li>');
+                });
+             
+                $('<ul/>', {
+                    'class': 'my-new-list',
+                    html: items.join('')
+                }).appendTo('body');
+                
+            });
+        
+        },
 
-			if (state === 'out') {
-				console.log('this is the state: 'state);
-				// $(s.header).animate({ 
-				// 	top: '-50', 
-				// 	}, 800,function() {
-						
-		  // 			});
-
-				// $(s.navigation).animate({ 
-				// 	top: '+200', 
-				// 	}, 800,function() {
-						
-		  // 			});
-	  		}
-	  		else {
-
-				console.log('this is the state: 'state);
-	  		// 	$(s.header, s.navigation).animate({ 
-					// top: '0', 
-					// }, 800,function() {
-						
-		  	// 		});
-	  		}
-		}
+        closeProjects: function() {
+            
+            theSequence.animateDOM(s.header, 0);
+            theSequence.animateDOM(s.navigation, 0);
+            theSequence.animateDOM(s.about, 0);
+        },
+        
+        animateDOM: function(element, topVal) {
+                
+            $(element).animate({
+                top: topVal,
+            }, 800);
+            
+        }
 
 		// initFlickr: {
 		// 	vars:,
@@ -71,10 +89,8 @@ $(function () {
 		
 	};
 	
-	  
-	$(function () {  
-		theSequence.init();  
-	});
+
+    theSequence.init();  
 
 });
 
